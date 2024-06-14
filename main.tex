@@ -1,0 +1,76 @@
+\documentclass{article}
+
+\usepackage{polyglossia}
+\setdefaultlanguage{sanskrit}
+\setotherlanguage{english}
+
+\newfontfamily\sanskritfont[Script=Devanagari]{Siddhanta}
+\newfontfamily\englishfont[Script=Latin]{Palatino}
+
+
+
+\usepackage{xltxtra}
+\usepackage{fontspec}
+\usepackage{varwidth}
+\usepackage{titlesec}
+\usepackage{titling}
+\usepackage{tcolorbox} % For creating a box around the verse
+\usepackage{setspace} % For adjusting line spacing
+\usepackage{adjustbox}
+\usepackage{multicol} % For creating multi-column layout
+
+
+% Customize the title
+\pretitle{\begin{center}\Huge\bfseries}
+\posttitle{\par\end{center}\vskip 0.5em}
+\preauthor{\begin{center}\Large}
+\postauthor{\par\end{center}}
+\predate{\begin{center}\large}
+\postdate{\par\end{center}}
+
+% Customize the verse environment
+\newenvironment{Verse}[1][]
+  {\bigskip\noindent\begin{center}\begin{adjustbox}{valign=M}\begin{tcolorbox}[colframe=black,colback=white,boxrule=0.5mm,arc=4mm,auto outer arc,left=2mm,right=2mm,top=2mm,bottom=2mm,halign=center]
+  \LARGE\bfseries#1\par\varwidth{\linewidth}\centering}
+  {\endvarwidth\end{tcolorbox}\end{adjustbox}\end{center}\bigskip}
+
+\title{भक्त्यानुस्मृति}
+\author{श्रीफणी पालाकोेडेटी}
+\date{}
+
+\begin{document}
+
+\maketitle
+
+\begin{Verse}
+    \setstretch{1.5} % Adjust line spacing within the verse
+    शुक्लाम्बरधरं विष्णुं शशिवर्णं चतुर्भुजम् ।\\
+    प्रसन्नवदनं ध्यायेत् सर्वविघ्नोपशान्तये ॥
+\end{Verse}
+
+\vspace{-2em} % Add some vertical space before the citation
+\begin{center}
+    अवन्त्यखण्डे स्कन्दपुराणे
+\end{center}
+\vspace{2em}
+
+\begin{multicols}{2}
+    \setlength{\columnseprule}{0.4pt}
+    \begin{itemize}
+        \item शुक्लाम्बरधरं = शुक्ल + अम्बर + धरं
+        \item शशिवर्णं = शशि + वर्णं
+        \item चतुर्भुजम् = चतुर् + भुजम्
+        \item प्रसन्नवदनं = प्रसन्न + वदनं
+        \item सर्वविघ्नोपशान्तये = सर्व + विघ्न + उपशान्तये
+    \end{itemize}
+
+    \columnbreak
+    
+    \textenglish{
+        \noindent Sri Vishnu - who wears white, is of a moon-like complexion, is four-armed,
+        and has a pleasant visage - we medidate on Him to ward off all obstacles.
+    }
+
+\end{multicols}
+
+\end{document}
